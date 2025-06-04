@@ -8,6 +8,734 @@
     <link rel="icon" href="/flipkart/img/logo_lite-cbb357.png" type="image/png">
     <link rel="stylesheet" href="/flipkart.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "inter", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+body {
+    margin: 0;
+    padding-top: 69px;
+    background-color: #f1f2f4;
+    /* overflow: hidden; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* header code */
+
+.nav-head {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    height: 67px;
+    width: 100%;
+    padding: 12px 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 10001;
+
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.nav-button {
+    border-radius: 10px 0 0 10px;
+    background-color: #f0f5ff;
+    height: 40px;
+    width: 44px;
+    margin-right: -6px;
+    border: none;
+}
+
+.nav-searchbar {
+    background-color: #f0f5ff;
+    border: none;
+    height: 40px;
+    width: 709px;
+    border-radius: 0 10px 10px 0;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 11px
+}
+
+.nav-pro {
+    display: inline-block;
+    position: relative;
+    z-index: 10000;
+}
+
+.nav-con {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 27px;
+}
+
+.nav-cont {
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 3px;
+
+}
+
+.nav-cont:hover {
+    background-color: #2a55e5;
+    color: white
+}
+
+
+.nav-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.ri-img {
+    width: 24px;
+    height: 24px;
+}
+
+.arrow-icon {
+    transition: transform 0.3s;
+}
+
+.nav-pro:hover .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.login-panel {
+    margin-top: -4px;
+    margin-left: 3px;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 258px;
+    display: none;
+    z-index: 9999;
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.in-panel {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #9e9d9d;
+}
+
+.for-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.for-ul img {
+    width: 20px;
+    height: 24px;
+}
+
+.bak {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.bak img {
+    width: 24px;
+    height: 24px;
+}
+
+.bak a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.bak:hover {
+    background-color: #f1f2f4;
+}
+
+.nav-pro:hover .login-panel {
+    display: block;
+}
+
+.login-panel a,
+.login-panel button {
+    display: block;
+    margin: 8px 0;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.nav-right1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 11px
+}
+
+.nav-pro1 {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-con1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 27px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-icon1 {
+    height: 24px;
+    width: 24px;
+}
+
+.ri-img1 {
+    width: 24px;
+    height: 24px;
+}
+
+.login-panel1 {
+    margin-top: -4px;
+    margin-left: -195px;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* padding: 12px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 258px;
+    display: none;
+    z-index: 9999;
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.for-ul1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.for-ul1 img {
+    width: 20px;
+    height: 24px;
+}
+
+.bak1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.bak1:hover {
+    background-color: #f1f2f4;
+}
+
+.bak1 img {
+    width: 24px;
+    height: 24px;
+}
+
+.bak1 a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.nav-pro1:hover .login-panel1 {
+    display: block;
+}
+
+.login-panel1 a,
+.login-panel1 button {
+    display: block;
+    margin: 8px 0;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* Header end from here  */
+
+/* main code stat from here  */
+
+.for-ul2 {
+    padding: 9px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 150px;
+    width: 1514px;
+    white-space: nowrap;
+}
+
+.ful-bak {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1500px;
+}
+
+.bak2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 126px;
+    padding: 16px 16px 16px 23px
+}
+
+/* main css end here */
+
+
+/* main2 css start here */
+.slider-container {
+    margin: 0 9px;
+    position: relative;
+    width: 1507px;
+    overflow: hidden;
+    background: #fff;
+    z-index: 1;
+}
+
+.arrow {
+    height: 88px;
+    width: 44px;
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 12px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #878787;
+}
+
+.left {
+    left: 0px;
+    border-radius: 0 7px 7px 0;
+
+}
+
+.right {
+    right: 0px;
+    border-radius: 7px 0 0 7px;
+}
+
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    height: 235px;
+}
+
+.slide img {
+    width: 1507px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.dots {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+.dot {
+    display: inline-block;
+    height: 4px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.dot.active {
+    background-color: #333;
+    transform: scale(1.4);
+}
+
+
+.dot.active:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: #000;
+    transform: translate(-50%, -50%);
+    animation: progress 5s linear forwards;
+    border-radius: 2px;
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* main2 css end here */
+
+/* main3 main4 mix css start here */
+
+.main3 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.main4 {
+    margin-top: -6px;
+    padding: 0px 10px;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 1272px;
+    background-color: white;
+    overflow: hidden;
+    padding: 10px 16px;
+}
+
+.slider-wrapper2 {
+    position: relative;
+    width: 1498px;
+    background-color: white;
+    overflow: hidden;
+    padding: 10px 16px;
+}
+
+.slider1 {
+    display: flex;
+    gap: 25px;
+    padding: 0 40px;
+    /* Extra space for buttons */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider1::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 180px;
+    scroll-snap-align: start;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.left-btn {
+    left: 0px;
+    border-radius: 0 7px 7px 0;
+}
+
+.right-btn {
+    right: 0px;
+    border-radius: 7px 0 0 7px;
+}
+
+.side-img {
+    width: 240px;
+    height: auto;
+}
+
+/* main3 main4 mix css end here */
+
+.pic1 img {
+    height: 264px;
+    width: 493px;
+    margin-top: 15px;
+    display: flex;
+    gap: 6px;
+}
+
+.picture {
+    margin-top: 6px;
+    display: flex;
+    gap: 6px;
+}
+
+.check {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+}
+
+.top-picks-container {
+    background: white;
+    padding: 20px;
+    width: 490px;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.arrow-icon {
+    font-size: 18px;
+    color: royalblue;
+    cursor: pointer;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-name {
+    font-size: 15px;
+    margin: 10px 0 4px;
+    color: #333;
+    display: flex;
+}
+
+.product-offer {
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+    display: flex;
+}
+
+.flight img {
+    margin-top: 18px;
+    width: 1495px;
+}
+
+.pic3 img {
+    margin-top: 10px;
+    width: 495px;
+}
+
+
+/* main5 start here */
+.main5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.main5-pic img {
+    height: 530px;
+    width: 992px;
+    object-fit: fill;
+}
+
+.explore-button {
+    position: absolute;
+    bottom: 66px;
+    left: 226px;
+    background-color: #fff;
+    color: #000;
+    padding: 9px 39px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.explore-button:hover {
+    background-color: #f0f0f0;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
+.in-footer {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 40px 60px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+    font-size: 15px;
+}
+
+.in-footer h4 {
+    color: #878787;
+    font-size: 12px;
+    margin-bottom: 12px;
+
+}
+
+.in-footer ul li a {
+    font-family: inter_semi_bold, fallback-inter_semi_bold, Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    line-height: 18px;
+}
+
+.btl4ck {
+    border-left: 1px solid #454d5e;
+    padding-left: 30px;
+}
+
+.footer2 {
+    margin: 0px 10px;
+    height: 66px;
+    background-color: black;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.in-footer2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.in-footer2 span {
+    text-decoration: none;
+    color: white;
+}
+
+.in-footer2 p {
+    color: white;
+}
+
+._1HSe4t {
+    border-top: 1px solid #454d5e;
+    margin-bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+        
+    </style>
 </head>
 
 <body>
